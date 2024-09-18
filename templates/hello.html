@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fibonacci number generator</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>The nth Fibonacci number</h1>
+            <form action="/button-clicked" method="POST">
+                <label for="n">Enter n:</label>
+                <input type="number" id="n" name="n" min="1" max="2147483647" required>
+                <input type="submit" value="Submit">
+            </form>
+            {% if result %}
+                <h2>The {{ n }}th Fibonacci number is {{ result }}</h2>
+            {% endif %}
+        </div>
+    </body>
+</html>
